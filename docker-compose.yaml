@@ -1,0 +1,7 @@
+services:
+  app:
+    container_name: daddy-ui
+    image: app-prod
+    build:
+      context: .
+      target: production
