@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout codes') {
             steps {
                 echo 'Checking out ui code from Git repo'
-                git 'https://github.com/nguyencuongabcxyz/daddy_ui.git'
+                git branch: 'main', url: 'https://github.com/nguyencuongabcxyz/daddy_ui.git'
             }
         }
         stage('Build Docker image') {
