@@ -21,7 +21,7 @@ pipeline {
         stage('Login Dockerhub') {
             steps {
                 echo 'Logging in Dockerhub'
-                bat 'docker login -u %DOCKERHUB_CREDENTIALS_USR% -p %DOCKERHUB_CREDENTIALS_PSW%'
+                bat 'echo | set /p="%DOCKERHUB_CREDENTIALS_PSW%" | docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin'
             }
         }
         stage('Publish Docker image') {
@@ -38,7 +38,7 @@ pipeline {
       }
 
       success {
-        build job: 'daddy_deployment'
+        build job: 'daddy_deployment', wait: false 
       }
     }
 }
