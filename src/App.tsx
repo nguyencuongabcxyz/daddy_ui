@@ -6,7 +6,7 @@ export function App() {
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const response = await axios.get<Order[]>("http://localhost:8080");
+      const response = await axios.get<Order[]>("http://localhost:8000");
       setOrder(response.data[0])
       // ...
     }
