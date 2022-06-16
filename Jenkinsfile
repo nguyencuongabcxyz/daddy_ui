@@ -36,5 +36,9 @@ pipeline {
       always {
         bat 'docker logout'
       }
+
+      success {
+        build job: 'daddy_deployment'
+      }
     }
 }
