@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout codes') {
             steps {
                 echo 'Checking out ui code from Git repo'
-                git 'https://github.com/nguyencuongabcxyz/daddy_ui'
+                git 'https://github.com/nguyencuongabcxyz/daddy_ui.git'
             }
         }
         stage('Build Docker image') {
@@ -30,5 +30,11 @@ pipeline {
                 bat 'docker push nguyenc123/daddy_ui'
             }
         }
+    }
+
+    post {
+      always {
+        bat 'docker logout'
+      }
     }
 }
