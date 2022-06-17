@@ -18,7 +18,7 @@ export function App() {
     <h1>Order detail</h1>
     <p>{order?.name}</p>
     <p>{order?.quantity}</p>
-    <p>Change footer alo</p>
+    <p>Develop footer</p>
     </>
   );
 }
